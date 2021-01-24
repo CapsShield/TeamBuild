@@ -1,5 +1,10 @@
-import React from "react";
+import React from 'react';
+import MoreLike from './MoreLike.jsx';
 
 export default function App() {
-  return <div>Hello World from React</div>;
+  return (
+    <div>
+      <MoreLike />
+    </div>
+  );
 }
