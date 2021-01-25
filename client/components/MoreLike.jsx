@@ -100,19 +100,19 @@ const GameContainer = styled.div`
     width: 2px;
   }
 
-  // &::-webkit-scrollbar-button:horizontal:decrement {
-  //   width: 50px;
-  //   background-color: rgba(0, 0, 0, 0.2);
-  //   border-radius: 3px;
-  // }
+  &::-webkit-scrollbar-button:horizontal:decrement:start {
+    width: 30px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
 
-  // &::-webkit-scrollbar-button:horizontal:decrement:hover {
-  //   background-color: rgba(62, 126, 167, 0.8);
-  // }
+  &::-webkit-scrollbar-button:horizontal:decrement:hover {
+    background-color: rgba(62, 126, 167, 0.8);
+  }
 
   /* Right */
-  &::-webkit-scrollbar-button:horizontal:increment {
-    width: 40px;
+  &::-webkit-scrollbar-button:horizontal:increment:end {
+    width: 30px;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 3px;
 
