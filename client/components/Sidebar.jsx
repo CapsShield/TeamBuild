@@ -57,7 +57,7 @@ const SidebarContainer = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  & * {
+  & *, & *::before, & *::after {
     box-sizing: border-box;
   }
 `;
@@ -183,12 +183,15 @@ const GridCorner = styled(GridItem)`
 `;
 const ShopItemsList = styled.div`
   display: flex;
+  padding: 4px 0;
+  margin-bottom: 5px;
+  margin-top: 2px;
 `;
 const ShopItem = styled.img`
   height: 64px;
   width: 64px;
   margin-right: 4px;
-  background: #fff;
+  background: #000;
 `;
 const MoreItems = styled.div`
   background-color: rgba( 103, 193, 245, 0.2 );
