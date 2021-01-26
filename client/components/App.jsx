@@ -1,10 +1,10 @@
 import React from 'react';
-import MoreLike from './MoreLike.jsx';
+import JoelComponent from './JoelComponent.jsx';
 
 export default function App() {
   return (
     <div>
-      <MoreLike />
+      <JoelComponent />
     </div>
   );
 }

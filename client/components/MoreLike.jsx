@@ -17,6 +17,7 @@ class MoreLike extends React.Component {
               <Title>MORE LIKE THIS</Title>
               <Button>See all</Button>
             </Header>
+            <img src='https://store.akamai.steamstatic.com/public/images/v6/maincol_gradient_rule.png' />
             <GameContainer>
               {games.map((game, i) => (
                 <Game key={i}>
@@ -38,25 +39,31 @@ body {
   font-family: Arial, sans-serif;
   background-color: rgb(27, 40, 56);
   color: #dbe2e6;
+  width: 100%;
 }`;
 
 const Page = styled.div`
   width: 940px;
+  margin: auto;
+  padding-top: 20px;
 `;
 
 const MoreContainer = styled.div`
-  width: 653px;
+  width: 615px;
+  display: grid;
+  padding-top: 40px;
+  grid-template-rows: 25px 1px 150px;
 `;
 
 const Header = styled.div`
-  width: 653px;
+  width: 615px;
   display: flex;
   justify-content: space-between;
 `;
 
 const Game = styled.div`
   width: 203px;
-  height: 110px;
+  height: 200px;
   background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0);
   display: flex;
@@ -76,7 +83,7 @@ const GameContainer = styled.div`
   flex-direction: row;
   overflow: scroll;
   overflow-y: hidden;
-  width: 653px;
+  width: 615px;
   &::-webkit-scrollbar {
     display: block;
     background-color: rgba(0, 0, 0, 0.2);
@@ -115,8 +122,6 @@ const GameContainer = styled.div`
     width: 30px;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 3px;
-
-
   }
 
   &::-webkit-scrollbar-button:horizontal:increment:hover {
@@ -125,6 +130,7 @@ const GameContainer = styled.div`
 
   &::-webkit-scrollbar-corner {
     display: none;
+  }
 `;
 
 const BlueText = styled.span`
@@ -162,10 +168,14 @@ const Button = styled.button`
   height: 15px;
   padding: 2px 4px;
 
-  &: hover {
+  &:hover {
     color: white;
     background: linear-gradient(-60deg, #417a9b 5%, #67c1f5 95%);
   }
+`;
+
+const ImageDiv = styled.div`
+  height: 1px;
 `;
 
 export default MoreLike;
