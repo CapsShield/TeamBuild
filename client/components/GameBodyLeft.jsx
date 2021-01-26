@@ -46,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 const Page = styled.div`
-  width: 940px;
+  width: 100%;
   margin: auto;
   margin-bottom: 25px;
   position: relative;

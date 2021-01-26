@@ -91,7 +91,7 @@ const GameText = () => {
 };
 
 const Page = styled.div`
-  width: 940px;
+  width: 100%;
   margin: auto;
   margin-bottom: 25px;
   padding-top: 35px;

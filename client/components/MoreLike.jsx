@@ -43,7 +43,7 @@ body {
 }`;
 
 const Page = styled.div`
-  width: 940px;
+  width: 100%;
   margin: auto;
   padding-top: 20px;
 `;

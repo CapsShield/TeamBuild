@@ -16,6 +16,7 @@ const JoelComponent = () => {
 
 const Main = styled.div`
   grid-column: 1;
+  width: 100%;
 `;
 
 export default JoelComponent;
