@@ -192,6 +192,7 @@ const ShopItem = styled.img`
   width: 64px;
   margin-right: 4px;
   background: #000;
+  cursor: pointer;
 `;
 const MoreItems = styled.div`
   background-color: rgba( 103, 193, 245, 0.2 );
@@ -203,5 +204,10 @@ const MoreItems = styled.div`
   width: 64px;
   line-height: 14px;
   padding: 18px 14px;
+  cursor: pointer;
+  &:hover {
+    background: linear-gradient(135deg, #67c1f5 0%,#417a9b 100%);
+    color: #fff;
+  }
 `;
 export default Sidebar;
