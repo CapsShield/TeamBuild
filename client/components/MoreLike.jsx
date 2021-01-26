@@ -70,6 +70,7 @@ const Game = styled.div`
   flex-direction: column;
   padding: 15px;
   margin: 1px;
+  cursor: pointer;
 
   &:hover {
     border-top: 1px solid rgba(103, 193, 245, 0.5);
