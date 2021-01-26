@@ -14,5 +14,5 @@ export default function App() {
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: 940px 16px 308px;
+  grid-template-columns: 616px 16px 308px;
 `;
