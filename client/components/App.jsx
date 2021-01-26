@@ -2,12 +2,13 @@ import React from 'react';
 import MoreLike from './MoreLike.jsx';
 import styled from 'styled-components';
 import Sidebar from './Sidebar.jsx';
+import JoelComponent from './JoelComponent.jsx';
 
 export default function App() {
   return (
     <Center>
       <GridContainer>
-        <MoreLike />
+        <JoelComponent />
         <Sidebar />
       </GridContainer>
     </Center>
