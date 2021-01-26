@@ -210,4 +210,5 @@ const MoreItems = styled.div`
     color: #fff;
   }
 `;
+const GameDetails = styled.div``;
 export default Sidebar;
