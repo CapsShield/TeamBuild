@@ -25,6 +25,28 @@ const Sidebar = () => {
           </DetailLine>
         </DetailsContainer>
       </Card>
+      <Card>
+        <LanguageGrid>
+          <GridTitle>Languages:</GridTitle>
+          <GridCorner></GridCorner>
+          <GridRow1>English</GridRow1>
+          <ColumnLabel1>Interface</ColumnLabel1>
+          <ColumnLabel2>Full Audio</ColumnLabel2>
+          <ColumnLabel3>Subtitles</ColumnLabel3>
+          <GridContent1>✔</GridContent1>
+          <GridContent2>✔</GridContent2>
+          <GridContent3></GridContent3>
+        </LanguageGrid>
+      </Card>
+      <Card>
+        <div>Points Shop Items Available</div>
+        <ShopItemsList>
+          <ShopItem src="https://steamcommunity.com/economy/profilebackground/items/219890/356fd93e785c54c8e3a115ba91cb32fcce459d15.jpg?size=64x0"/>
+          <ShopItem src="https://steamcommunity.com/economy/profilebackground/items/219890/421e2496a27dc2c4faa6b355847e6074bc68bf9b.jpg?size=64x0"/>
+          <ShopItem src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/219890/d2f48c27cfac4a963e48cfa70391aecc92ab6384.png"/>
+          <MoreItems>View all 10</MoreItems>
+        </ShopItemsList>
+      </Card>
     </SidebarContainer>
   );
 };
@@ -45,6 +67,8 @@ const Card = styled.div`
   padding: 16px;
   margin-bottom: 8px;
   margin-top: 0px;
+  color: #8f98a0;
+  font-size: 12px;
 `;
 const CardHeader = styled.div`
   background-color: rgba(0, 0, 0, 0.2);
@@ -102,5 +126,79 @@ const DetailText = styled.div`
     background: linear-gradient(-60deg, #417a9b 0%,#67c1f5 100%);
   }
 `;
-
+const LanguageGrid = styled.div`
+  display: grid;
+  grid-template-columns: 91px 62px 61px 62px;
+  grid-template-rows: 14px 14px 21px;
+`;
+const GridItem = styled.div`
+  font-size: 12px;
+  color: #8f98a0;
+  border-bottom: 1px #808080 solid;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const GridTitle = styled(GridItem)`
+  border: none;
+  grid-column: 1;
+  grid-row: 1;
+  justify-content: flex-start;
+`;
+const ColumnLabel = styled(GridItem)`
+  color: b0aeac;
+  grid-row: 2
+`;
+const GridContent = styled(GridItem)`
+  color: #67c1f5;
+  grid-row: 3;
+`;
+const GridRow1 = styled(GridItem)`
+  grid-column: 1;
+  grid-row: 3;
+  justify-content: flex-start;
+`;
+const GridContent1 = styled(GridContent)`
+  grid-column: 2;
+`;
+const GridContent2 = styled(GridContent)`
+  grid-column: 3;
+`;
+const GridContent3 = styled(GridContent)`
+  grid-column: 4;
+`;
+const ColumnLabel1 = styled(ColumnLabel)`
+  grid-column: 2;
+`;
+const ColumnLabel2 = styled(ColumnLabel)`
+  grid-column: 3;
+`;
+const ColumnLabel3 = styled(ColumnLabel)`
+  grid-column: 4;
+`;
+const GridCorner = styled(GridItem)`
+  grid-column: 1;
+  grid-row: 2;
+`;
+const ShopItemsList = styled.div`
+  display: flex;
+`;
+const ShopItem = styled.img`
+  height: 64px;
+  width: 64px;
+  margin-right: 4px;
+  background: #fff;
+`;
+const MoreItems = styled.div`
+  background-color: rgba( 103, 193, 245, 0.2 );
+  border-radius: 1px;
+  font-size: 13px;
+  color: #67c1f5;
+  text-align: center;
+  height: 64px;
+  width: 64px;
+  line-height: 14px;
+  padding: 18px 14px;
+`;
 export default Sidebar;
