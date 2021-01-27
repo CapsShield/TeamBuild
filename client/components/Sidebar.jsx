@@ -47,6 +47,29 @@ const Sidebar = () => {
           <MoreItems>View all 10</MoreItems>
         </ShopItemsList>
       </Card>
+      <Card>
+        <GameDetails>
+          <div><DetailLabel>title: </DetailLabel>Antichamber</div>
+          <div><DetailLabel>genre: </DetailLabel><DetailLink>Adventure</DetailLink>, <DetailLink>Indie</DetailLink></div>
+          <div><DetailLabel>developer: </DetailLabel><DetailLink>Alexander Bruce</DetailLink></div>
+          <div><DetailLabel>publisher: </DetailLabel><DetailLink>Demruth</DetailLink></div>
+          <div><DetailLabel>release date: </DetailLabel>Jan 31, 2013</div>
+        </GameDetails>
+        <DetailBarsContainer>
+          <DetailBar>Visit the website <ExternalLinkImg src="https://store.cloudflare.steamstatic.com/public/images/v5/ico_external_link.gif"/></DetailBar>
+          <DetailBar>View update history</DetailBar>
+          <DetailBar>Read related news</DetailBar>
+          <DetailBar>View discussions</DetailBar>
+          <DetailBar>Find Community Groups</DetailBar>
+        </DetailBarsContainer>
+      </Card>
+      <Card>
+        <ButtonRow>
+          <ChunkyButton>Share</ChunkyButton>
+          <ChunkyButton>Embed</ChunkyButton>
+          <ChunkyButton><ReportIcon></ReportIcon></ChunkyButton>
+        </ButtonRow>
+      </Card>
     </SidebarContainer>
   );
 };
@@ -210,5 +233,63 @@ const MoreItems = styled.div`
     color: #fff;
   }
 `;
-const GameDetails = styled.div``;
+const GameDetails = styled.div`
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+`;
+const DetailLabel = styled.span`
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #556772;
+`;
+const DetailLink = styled.a`
+  color: #67c1f5;
+  text-decoration: none;
+  &:hover {
+    color: #fff;
+  }
+`;
+const DetailBarsContainer = styled.div`
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+`;
+const DetailBar = styled.div`
+  background: rgba( 103, 193, 245, 0.1 );
+  padding-top: 4px;
+  padding-left: 8px;
+  padding-bottom: 4px;
+  line-height: 17px;
+  height: 25px;
+  width: 276px;
+  border-radius: 1px;
+  margin-bottom: 2px;
+  color: #67c1f5;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+    background: linear-gradient(135deg, #67c1f5 0%,#417a9b 100%);
+  }
+`;
+const ExternalLinkImg = styled.img`
+  max-width: 12px;
+  max-height: 12px;
+  padding-right: 4px;
+  vertical-align: middle;
+`;
+const ButtonRow = styled.div`
+  display: flex;
+  & > * {
+    margin-right: 3px;
+  }
+`;
+const ReportIcon = styled.div`
+  background: url(https://store.cloudflare.steamstatic.com/public/shared/images/buttons/icons_16.png?v=5);
+  height: 16px;
+  width: 16px;
+  background-position: -256px 0px;
+  margin: 7px 4px 7px 0;
+`;
+
 export default Sidebar;
