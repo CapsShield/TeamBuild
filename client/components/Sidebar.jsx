@@ -47,6 +47,57 @@ const Sidebar = () => {
           <MoreItems>View all 10</MoreItems>
         </ShopItemsList>
       </Card>
+      <Card>
+        <GameDetails>
+          <div><DetailLabel>title: </DetailLabel>Antichamber</div>
+          <div><DetailLabel>genre: </DetailLabel><DetailLink>Adventure</DetailLink>, <DetailLink>Indie</DetailLink></div>
+          <div><DetailLabel>developer: </DetailLabel><DetailLink>Alexander Bruce</DetailLink></div>
+          <div><DetailLabel>publisher: </DetailLabel><DetailLink>Demruth</DetailLink></div>
+          <div><DetailLabel>release date: </DetailLabel>Jan 31, 2013</div>
+        </GameDetails>
+        <DetailBarsContainer>
+          <DetailBar>Visit the website <ExternalLinkImg src="https://store.cloudflare.steamstatic.com/public/images/v5/ico_external_link.gif"/></DetailBar>
+          <DetailBar>View update history</DetailBar>
+          <DetailBar>Read related news</DetailBar>
+          <DetailBar>View discussions</DetailBar>
+          <DetailBar>Find Community Groups</DetailBar>
+        </DetailBarsContainer>
+      </Card>
+      <Card>
+        <ButtonRow>
+          <ChunkyButton>Share</ChunkyButton>
+          <ChunkyButton>Embed</ChunkyButton>
+          <ChunkyButton><ReportIcon></ReportIcon></ChunkyButton>
+        </ButtonRow>
+      </Card>
+      <Card>
+        <MetaContainer>
+          <Score>82</Score>
+          <MetaLogo></MetaLogo>
+          <MetaInnerContainer>
+            <MetaLogoText>metacritic</MetaLogoText>
+            <MetaTagLine>Read Critic Reviews <ExternalLinkImg src="https://store.cloudflare.steamstatic.com/public/images/ico/iconExternalLink.gif"/></MetaTagLine>
+          </MetaInnerContainer>
+        </MetaContainer>
+      </Card>
+      <Card>
+        <div>Awards</div>
+        <AwardsContainer collapsed={collapsed}>
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/219890/extras/DefiesDescription_Nominee.jpg?t=1525832559" />
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/219890/extras/WhoaDude_Nominee.jpg?t=1525832559" />
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/219890/extras/01 IGF Tech.jpg" />
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/219890/extras/04 IGF Nuovo.jpg" />
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/219890/extras/02 PAX10.jpg" />
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/219890/extras/03 IndieCade.jpg" />
+        </AwardsContainer>
+        {!collapsed ? null : <FadeContainer>
+          <CollapsedFade/>
+          <Expander onClick={() => setCollapsed(false)}>
+            <span>read more</span>
+            <ExpanderIcon />
+          </Expander>
+        </FadeContainer>}
+      </Card>
     </SidebarContainer>
   );
 };
@@ -210,5 +261,143 @@ const MoreItems = styled.div`
     color: #fff;
   }
 `;
-const GameDetails = styled.div``;
+const GameDetails = styled.div`
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+`;
+const DetailLabel = styled.span`
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #556772;
+`;
+const DetailLink = styled.a`
+  color: #67c1f5;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    color: #fff;
+  }
+`;
+const DetailBarsContainer = styled.div`
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+`;
+const DetailBar = styled.div`
+  background: rgba( 103, 193, 245, 0.1 );
+  padding-top: 4px;
+  padding-left: 8px;
+  padding-bottom: 4px;
+  line-height: 17px;
+  height: 25px;
+  width: 276px;
+  border-radius: 1px;
+  margin-bottom: 2px;
+  color: #67c1f5;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+    background: linear-gradient(135deg, #67c1f5 0%,#417a9b 100%);
+  }
+`;
+const ExternalLinkImg = styled.img`
+  max-width: 12px;
+  max-height: 12px;
+  padding-right: 4px;
+  vertical-align: middle;
+`;
+const ButtonRow = styled.div`
+  display: flex;
+  & > * {
+    margin-right: 3px;
+  }
+`;
+const ReportIcon = styled.div`
+  background: url(https://store.cloudflare.steamstatic.com/public/shared/images/buttons/icons_16.png?v=5);
+  height: 16px;
+  width: 16px;
+  background-position: -256px 0px;
+  margin: 7px 4px 7px 0;
+`;
+const MetaContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const Score = styled.div`
+  background-color: #66CC33;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  font-size: 25px;
+  text-align: center;
+`;
+const MetaLogo = styled.div`
+  height: 35px;
+  width: 35px;
+  background-image: url(https://store.cloudflare.steamstatic.com/public/images/v6/mc_logo_no_text.png);
+  background-repeat: no-repeat;
+  margin-left: 10px;
+`;
+const MetaInnerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 2px;
+`;
+const MetaLogoText = styled.div`
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: bold;
+  color: #fff;
+`;
+const MetaTagLine = styled.div`
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    color: #66c0f4;
+  }
+`;
+const AwardsContainer = styled.div`
+  height: ${props => props.collapsed ? '400px;' : '1070px;'}
+  padding: 5px 0;
+  margin-top: 2px;
+  border-bottom: ${props => props.collapsed ? '1px rgb(48, 62, 81) solid;' : 'none;'}
+  max-width: 276px;
+  overflow-y: hidden;
+  transition: height 200ms ease;
+`;
+const FadeContainer = styled.div`
+  position: relative;
+`;
+const CollapsedFade = styled.div`
+  position: absolute;
+  top: -74px;
+  z-index: 1;
+  height: 73px;
+  width: 100%;
+  background-image: linear-gradient(to bottom,rgba( 22,32,45,0) 10%,rgba( 22,32,45,.95) 95%);
+`;
+const Expander = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 20px;
+  text-transform: uppercase;
+  line-height: 20px;
+  font-size: 10px;
+  color: #537ca6;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+  }
+`;
+const ExpanderIcon = styled.i`
+  margin-left: 4px;
+  height: 8px;
+  width: 8px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJ5JREFUeNpiDK5Z5sjAwFAJxAFrmiO/MUBBSO3yDCBlwAQkjgLxdyDeDBTkQpKsAuJuxv///4ME2ICc1UDMA1IIxEVA7Ag08S4j0ApmIEcOiJ9CFRkBsQMQPwZicRYgYQmVcAXiUCAWA+JXULEXTEBjjgAZxUC8G4jVkCRBIBfsBqjDooBULxBfhjo6FKj5F1wBkqIQII4ASYLEAAIMAPrDNy1EYNLFAAAAAElFTkSuQmCC);
+  background-repeat: no-repeat;
+`;
+
 export default Sidebar;

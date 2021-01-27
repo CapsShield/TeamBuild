@@ -41,6 +41,7 @@ const GameText = () => {
             way forward.
             <br></br>
             <br></br>
+            <br></br>
             Several years in the making, Antichamber received over 25 awards and
             honors throughout its development, in major competitions including
             the Independent Games Festival, the PAX10, IndieCade and Make
@@ -145,7 +146,7 @@ const White = styled.span`
 const AboutThisGame = styled.div`
   display: grid;
   grid-template-rows: 27px 5px 180px 151px;
-  padding-top: 10px;
+  padding-top: 30px;
   width: 616px;
 `;
 
@@ -189,9 +190,12 @@ const StyledLI = styled.li`
     unicode-bidi: isolate;
   }
 `;
-const KeyFeatures = styled.div``;
+const KeyFeatures = styled.div`
+  margin-top: 18px;
+`;
 
 const SystemRequirements = styled.div`
+  margin-top: 50px;
   padding-top: 10px;
   display: grid;
   grid-template-rows: 25px 1px 135px;

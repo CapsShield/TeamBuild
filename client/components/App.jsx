@@ -1,6 +1,6 @@
 import React from 'react';
 import MoreLike from './MoreLike.jsx';
-import styled from 'styled-components';
+import styled, {createGlobalStyle} from 'styled-components';
 import Sidebar from './Sidebar.jsx';
 import JoelComponent from './JoelComponent.jsx';
 
@@ -14,10 +14,10 @@ export default function App() {
     </Center>
   );
 }
-
 const Center = styled.div`
   display: flex;
   justify-content: center;
+  background-color: transparent;
 `;
 const GridContainer = styled.div`
   display: grid;
