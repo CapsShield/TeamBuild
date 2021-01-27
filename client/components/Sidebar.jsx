@@ -80,6 +80,24 @@ const Sidebar = () => {
           </MetaInnerContainer>
         </MetaContainer>
       </Card>
+      <Card>
+        <div>Awards</div>
+        <AwardsContainer collapsed={collapsed}>
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/219890/extras/DefiesDescription_Nominee.jpg?t=1525832559" />
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/219890/extras/WhoaDude_Nominee.jpg?t=1525832559" />
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/219890/extras/01 IGF Tech.jpg" />
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/219890/extras/04 IGF Nuovo.jpg" />
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/219890/extras/02 PAX10.jpg" />
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/219890/extras/03 IndieCade.jpg" />
+        </AwardsContainer>
+        {!collapsed ? null : <FadeContainer>
+          <CollapsedFade/>
+          <Expander onClick={() => setCollapsed(false)}>
+            <span>read more</span>
+            <ExpanderIcon />
+          </Expander>
+        </FadeContainer>}
+      </Card>
     </SidebarContainer>
   );
 };
@@ -339,6 +357,46 @@ const MetaTagLine = styled.div`
     color: #66c0f4;
   }
 `;
-
+const AwardsContainer = styled.div`
+  height: ${props => props.collapsed ? '400px;' : '1070px;'}
+  padding: 5px 0;
+  margin-top: 2px;
+  border-bottom: ${props => props.collapsed ? '1px rgb(48, 62, 81) solid;' : 'none;'}
+  max-width: 276px;
+  overflow-y: hidden;
+  transition: height 200ms ease;
+`;
+const FadeContainer = styled.div`
+  position: relative;
+`;
+const CollapsedFade = styled.div`
+  position: absolute;
+  top: -74px;
+  z-index: 1;
+  height: 73px;
+  width: 100%;
+  background-image: linear-gradient(to bottom,rgba( 22,32,45,0) 10%,rgba( 22,32,45,.95) 95%);
+`;
+const Expander = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 20px;
+  text-transform: uppercase;
+  line-height: 20px;
+  font-size: 10px;
+  color: #537ca6;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+  }
+`;
+const ExpanderIcon = styled.i`
+  margin-left: 4px;
+  height: 8px;
+  width: 8px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJ5JREFUeNpiDK5Z5sjAwFAJxAFrmiO/MUBBSO3yDCBlwAQkjgLxdyDeDBTkQpKsAuJuxv///4ME2ICc1UDMA1IIxEVA7Ag08S4j0ApmIEcOiJ9CFRkBsQMQPwZicRYgYQmVcAXiUCAWA+JXULEXTEBjjgAZxUC8G4jVkCRBIBfsBqjDooBULxBfhjo6FKj5F1wBkqIQII4ASYLEAAIMAPrDNy1EYNLFAAAAAElFTkSuQmCC);
+  background-repeat: no-repeat;
+`;
 
 export default Sidebar;
