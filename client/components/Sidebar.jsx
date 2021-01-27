@@ -70,6 +70,16 @@ const Sidebar = () => {
           <ChunkyButton><ReportIcon></ReportIcon></ChunkyButton>
         </ButtonRow>
       </Card>
+      <Card>
+        <MetaContainer>
+          <Score>82</Score>
+          <MetaLogo></MetaLogo>
+          <MetaInnerContainer>
+            <MetaLogoText>metacritic</MetaLogoText>
+            <MetaTagLine>Read Critic Reviews <ExternalLinkImg src="https://store.cloudflare.steamstatic.com/public/images/ico/iconExternalLink.gif"/></MetaTagLine>
+          </MetaInnerContainer>
+        </MetaContainer>
+      </Card>
     </SidebarContainer>
   );
 };
@@ -291,5 +301,44 @@ const ReportIcon = styled.div`
   background-position: -256px 0px;
   margin: 7px 4px 7px 0;
 `;
+const MetaContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const Score = styled.div`
+  background-color: #66CC33;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  font-size: 25px;
+  text-align: center;
+`;
+const MetaLogo = styled.div`
+  height: 35px;
+  width: 35px;
+  background-image: url(https://store.cloudflare.steamstatic.com/public/images/v6/mc_logo_no_text.png);
+  background-repeat: no-repeat;
+  margin-left: 10px;
+`;
+const MetaInnerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 2px;
+`;
+const MetaLogoText = styled.div`
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: bold;
+  color: #fff;
+`;
+const MetaTagLine = styled.div`
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    color: #66c0f4;
+  }
+`;
+
 
 export default Sidebar;
