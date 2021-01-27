@@ -273,6 +273,7 @@ const DetailLabel = styled.span`
 `;
 const DetailLink = styled.a`
   color: #67c1f5;
+  cursor: pointer;
   text-decoration: none;
   &:hover {
     color: #fff;
